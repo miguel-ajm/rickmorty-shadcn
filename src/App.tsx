@@ -8,7 +8,7 @@ function App() {
     document.body.classList.add("dark")
   }, [])
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/rickmorty-shadcn">
       <Routes>
         <Route path="/" element={<Characters />} />
       </Routes>

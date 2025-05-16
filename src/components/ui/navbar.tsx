@@ -1,4 +1,5 @@
 import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
 
 type NavbarProps = {
@@ -6,9 +7,10 @@ type NavbarProps = {
   setSearch: (val: string) => void
   onSearch: () => void
   onReset: () => void
+  goToFirstPage: () => void
 }
 
-export default function Navbar({ search, setSearch, onSearch, onReset }: NavbarProps) {
+export default function Navbar({ search, setSearch, onSearch, onReset, goToFirstPage }: NavbarProps) {
   return (
     <header className="w-full fixed top-0 left-0 z-50 px-6 py-4 shadow bg-zinc-900 text-white">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8">
@@ -23,6 +25,15 @@ export default function Navbar({ search, setSearch, onSearch, onReset }: NavbarP
           }}
           className="relative flex items-center w-full sm:w-auto"
         >
+          {/* Botón para ir a la página 1 */}
+          <Button
+            variant="outline"
+            onClick={goToFirstPage}
+            className="bg-blue-500 text-white hover:bg-blue-600"
+          >
+            Home
+          </Button>
+
           {/* Campo de búsqueda */}
           <Input
             type="text"
